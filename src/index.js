@@ -3,28 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import Home from './view/home/Home';
+import friend from './view/friend/friend';
 
 
-
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Home />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
-const About = () => <h2>页面一</h2>;
-const Users = () => <h2>页面二</h2>;
+
 
 ReactDOM.render(
         <Router>
-            <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/about/" component={About} />
-                <Route path="/users/" component={Users} />
-            </Switch>
+            <Route render={({ location }) => (               
+                <TransitionGroup>
+                    <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                        <Switch location={location}>
+                            <Route path="/" exact component={Home} />
+                            <Route path="/about/" component={friend} />
+                            <Route path="/users/" component={Users} />
+                        </Switch>
+                    </CSSTransition>
+                </TransitionGroup> 
+            )}/>
         </Router>
 , document.getElementById('root'));
