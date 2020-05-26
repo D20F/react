@@ -2,9 +2,10 @@
 import './Home.css';
 import React from "react";
 import ReactDOM from 'react-dom';
-import ds from '../friend/friend'
+import { connect } from 'react-redux'
+// import ds from '../friend/friend'
 
-import { Link } from 'react-router-dom'
+import {pursecardFun} from '../../redux/actions'
 
 
 class App extends React.Component {
@@ -14,32 +15,35 @@ class App extends React.Component {
   }
   componentDidMount(){
     console.log(this.props)
-    // console.log(this.props.match.params)
-
-    // window.history.pushState('','',"/about:{sada:sadada}");
+    console.log(this.props.APP_UI_TREE.SHOW_PURSECARD)
     // let { history } = this.props
     // history.push({pathname: '/'})
   }
+  handleAddTodo = () => {
+    // dispatches actions to add todo
+    this.props.inclick()
+    console.log(this.props)
+  }
   render() {
-      return (
-        <div>
-          
-          {/* <p onClick={()=>{history.pushState('/about/')}}>App Container</p> */}
-          <ul>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/">Inbox</Link></li>
-          </ul>
-  
-        </div>
-      )
-      
+    return (
+      <div>
+        <button className="add-todo" onClick={this.handleAddTodo}>
+          Add Todo
+        </button>
+        {this.props.APP_UI_TREE.SHOW_PURSECARD}
+      </div>
+    )
   }
 }
-export default App;
-
-
-
-
+const mapDispatchToProps = dispatch => {
+  return {
+    inclick: () => dispatch(pursecardFun('CCC')),
+  }
+}
+const mapStateToProps = (state) => {
+  return state
+}
+export default connect( mapStateToProps, mapDispatchToProps)(App)
 
 
 

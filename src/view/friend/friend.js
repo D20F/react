@@ -1,9 +1,9 @@
 // import logo from '../../assets/img/logo.svg';
 import React from "react";
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux'
 
-import { Link } from 'react-router-dom'
-import { withRouter } from 'react-router-dom'
+
 
 
 class App extends React.Component {
@@ -17,10 +17,9 @@ class App extends React.Component {
       };
   }
 
-
  
   componentDidMount(){
- 
+    console.log(this.props)
   }
 
   render() {
@@ -28,8 +27,7 @@ class App extends React.Component {
         <div>
           App Container
           <ul>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/">Inbox</Link></li>
+            
           </ul>
   
         </div>
@@ -37,7 +35,12 @@ class App extends React.Component {
       
   }
 }
-export default App;
+
+const mapStateToProps = (state) => {
+  return state
+}
+export default connect(mapStateToProps)(App)
+
 
 
 

@@ -1,29 +1,62 @@
+
+// react 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 
+// router
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+
+// redux
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import { createLogger } from 'redux-logger'
+import thunk from 'redux-thunk'
+import reducer from './redux/reducers'
+
+// 组件
 import Home from './view/home/Home';
 import friend from './view/friend/friend';
+import './index.css';
+
+// thunk中间件使用
+const middleware = [ thunk ];
+if (process.env.NODE_ENV !== 'production') {
+  middleware.push(createLogger());
+}
+// 创建store
+const store = createStore(
+    reducer,
+    applyMiddleware(...middleware)
+)
 
 
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Link } from 'react-router-dom'
 
 
 
 ReactDOM.render(
+    <Provider store={store}>
         <Router>
             <Route render={({ location }) => (               
                 <TransitionGroup>
                     <CSSTransition key={location.key} classNames="fade" timeout={300}>
-                        <Switch location={location}>
+                        <Switch location={location} >
                             <Route path="/" exact component={Home} />
                             <Route path="/about/" component={friend} />
-                            <Route path="/users/" component={Users} />
+                            {/* <Route path="/users/" component={Users} /> */}
                         </Switch>
                     </CSSTransition>
                 </TransitionGroup> 
             )}/>
         </Router>
+    </Provider>
 , document.getElementById('root'));
+
+
+
+
+
+
+
+
