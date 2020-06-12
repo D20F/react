@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 // import ds from '../friend/friend'
 
 import {pursecardFun} from '../../redux/actions'
-
+import { Button, DatePicker, version } from "antd";
 
 class App extends React.Component {
 
@@ -26,11 +26,12 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
-        <button className="add-todo" onClick={this.handleAddTodo}>
-          Add Todo
-        </button>
-        {this.props.APP_UI_TREE.SHOW_PURSECARD}
+      <div className="App">
+        <h1>antd version: {version}</h1>
+        <DatePicker />
+        <Button type="primary" style={{ marginLeft: 8 }}>
+          Primary Button
+        </Button>
       </div>
     )
   }

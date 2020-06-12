@@ -7,7 +7,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-
 // redux
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
@@ -15,10 +14,13 @@ import { createLogger } from 'redux-logger'
 import thunk from 'redux-thunk'
 import reducer from './redux/reducers'
 
+// 全局导入antdcss
+import 'antd/dist/antd.css';
+import './index.css';
+
 // 组件
 import Home from './view/home/Home';
 import friend from './view/friend/friend';
-import './index.css';
 
 // thunk中间件使用
 const middleware = [ thunk ];

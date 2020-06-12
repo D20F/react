@@ -6,3 +6,6 @@
   opacity: 1;
   transition: opacity 250ms ease-in;
 }
+.App {
+  padding: 20px;
+}
