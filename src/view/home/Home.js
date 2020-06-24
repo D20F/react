@@ -28,6 +28,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>antd version: {version}</h1>
+        <p className='ppp'>asdafsafa</p>
         <DatePicker />
         <Button type="primary" style={{ marginLeft: 8 }}>
           Primary Button
