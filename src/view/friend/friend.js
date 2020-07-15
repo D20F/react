@@ -24,6 +24,8 @@ class App extends React.Component {
               <button onClick={this.alertName.bind(this)}>alert value</button>
               {/* file 类型的必须用 ref 获取 dom 来获取数据 */}
               <input type="file" ref={this.fileInputRef} />
+              
+              
           </div>
       )
   }

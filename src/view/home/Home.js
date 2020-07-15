@@ -1,5 +1,5 @@
 // import logo from '../../assets/img/logo.svg';
-import './Home.css';
+import './Home.scss';
 import React from "react";
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux'
@@ -29,6 +29,9 @@ class App extends React.Component {
       <div className="App">
         <h1>antd version: {version}</h1>
         <p className='ppp'>asdafsafa</p>
+        <div className='ccc'>
+          <p >asdafsafa</p>
+        </div>
         <DatePicker />
         <Button type="primary" style={{ marginLeft: 8 }}>
           Primary Button
