@@ -36,7 +36,6 @@ const store = createStore(
 
 
 
-
 ReactDOM.render(
     <Provider store={store}>
         <Router>
@@ -45,7 +44,7 @@ ReactDOM.render(
                     <CSSTransition key={location.key} classNames="fade" timeout={300}>
                         <Switch location={location} >
                             <Route path="/" exact component={Home} />
-                            <Route path="/about/" component={friend} />
+                            <Route path="/about" component={friend} />
                             {/* <Route path="/users/" component={Users} /> */}
                         </Switch>
                     </CSSTransition>
