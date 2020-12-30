@@ -24,10 +24,10 @@ class App extends React.Component {
     this.props.inclick('saafafasacsaca')
     console.log(this.props)
     console.log(this.props.APP_UI_TREE.SHOW_PURSECARD)
+    console.log(this.props.APP_UI_TREE.SHOW_PURSECARD)
     setTimeout(() => {
-      console.log(this.props.APP_UI_TREE.SHOW_PURSECARD)
-          let { history } = this.props
-    history.push({pathname: '/about'})
+        let { history } = this.props
+        history.push({pathname: '/about'})
     }, 2000);
   }
   render() {

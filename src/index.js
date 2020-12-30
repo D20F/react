@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // router
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, BrowserRouter, Route, Switch } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 // redux
@@ -23,9 +23,9 @@ import Home from './view/home/Home';
 import friend from './view/friend/friend';
 
 // thunk中间件使用
-const middleware = [ thunk ];
+const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') {
-  middleware.push(createLogger());
+    middleware.push(createLogger());
 }
 // 创建store
 const store = createStore(
@@ -33,30 +33,28 @@ const store = createStore(
     applyMiddleware(...middleware)
 )
 
-
-
-
 ReactDOM.render(
     <Provider store={store}>
-        <Router>
-            <Route render={({ location }) => (               
-                <TransitionGroup>
-                    <CSSTransition key={location.key} classNames="fade" timeout={300}>
-                        <Switch location={location} >
-                            <Route path="/" exact component={Home} />
-                            <Route path="/about" component={friend} />
-                            {/* <Route path="/users/" component={Users} /> */}
-                        </Switch>
-                    </CSSTransition>
-                </TransitionGroup> 
-            )}/>
-        </Router>
+        <BrowserRouter>
+            <Route render={({ location }) => (
+                // <TransitionGroup >
+                //     <CSSTransition
+                //     key={location.pathname}
+                //     appear={true}
+                //     classNames="item"
+                //     timeout={1000}
+                //     unmountOnExit={true}
+                // >
+                <Switch location={location} >
+                    <Route path="/" exact component={Home} />
+                    <Route path="/about" component={friend} />
+                </Switch>
+                //     </CSSTransition>
+                // </TransitionGroup>
+            )} />
+        </BrowserRouter>
     </Provider>
-, document.getElementById('root'));
-
-
-
-
+    , document.getElementById('root'));
 
 
 
