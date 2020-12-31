@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
-// import index from './index.module.css'
+import css from '../index.module.scss'
 
-import { Menu ,Layout } from 'antd';
+import { Menu, Layout } from 'antd';
 import {
     DesktopOutlined,
     PieChartOutlined,
@@ -20,14 +20,13 @@ class SiderComponent extends React.Component {
     constructor(props) {
         super(props)
     }
-   
+
 
 
     render() {
         return (
-            // <Sider collapsible collapsed={'collapsed'} onCollapse={this.onCollapse}>
-            <Sider collapsible >
-            <div className="logo" />
+            <Sider collapsed={this.props.collapsed} >
+                <div className={css.logo} />
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                     <Menu.Item key="1" icon={<PieChartOutlined />}>
                         Option 1
@@ -48,7 +47,7 @@ class SiderComponent extends React.Component {
                         Files
                 </Menu.Item>
                 </Menu>
-                </Sider>
+            </Sider>
         );
     }
 }

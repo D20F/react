@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
-// import index from './index.module.css'
+import css from './index.module.scss'
 
-import './index.css'
 
 import Sider from './components/sider'
-import Headers from './components/header'
+import Header from './components/header'
 import Breadcrumb from './components/breadcrumb'
 import Footer from './components/footer'
 
@@ -23,11 +22,8 @@ class LayoutComponent extends React.Component {
         collapsed: false,
     };
 
-    onCollapse = collapsed => {
-        console.log(collapsed);
-        this.setState({ collapsed });
-    };
-    toggle = () => {
+
+    onCollapse = () => {
         this.setState({
             collapsed: !this.state.collapsed,
         });
@@ -35,15 +31,14 @@ class LayoutComponent extends React.Component {
     render() {
         const { collapsed } = this.state;
         return (
-            <Layout style={{ minHeight: '100vh' }}>
-                    <Sider />
-
-                <Layout className="site-layout">
-                    <Headers />
+            <Layout className={css.layout}>
+                <Sider collapsed={this.state.collapsed} />
+                <Layout className={css.siteLayout}>
+                    <Header collapsed={this.state.collapsed} onCollapse={this.onCollapse} />
 
                     <Content style={{ margin: '0 16px' }}>
                         <Breadcrumb />
-                        
+                        {this.props.children}
                     </Content>
                     <Footer />
                 </Layout>

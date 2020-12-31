@@ -35,24 +35,24 @@ const store = createStore(
     applyMiddleware(...middleware)
 )
 
+
+
 ReactDOM.render(
     <Provider store={store}>
-        <Layout />
+        <Layout>
+
+            <BrowserRouter>
+                <Route render={({ location }) => (
+                    <Switch location={location} >
+                        <Route path="/" exact component={Home} />
+                        <Route path="/about" component={friend} />
+                    </Switch>
+                )} />
+            </BrowserRouter>
+
+        </Layout>
     </Provider>
     , document.getElementById('root'));
-
-// ReactDOM.render(
-//     <Provider store={store}>
-//         <BrowserRouter>
-//             <Route render={({ location }) => (
-//                 <Switch location={location} >
-//                     <Route path="/" exact component={Home} />
-//                     <Route path="/about" component={friend} />
-//                 </Switch>
-//             )} />
-//         </BrowserRouter>
-//     </Provider>
-//     , document.getElementById('root'));
 
 
 /* <TransitionGroup >

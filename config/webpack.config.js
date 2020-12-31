@@ -461,6 +461,7 @@ module.exports = function(webpackEnv) {
                 {
                   importLoaders: 3,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
+                  modules:true
                 },
                 'sass-loader'
               ),
