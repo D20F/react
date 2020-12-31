@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 
-import css from '../index.module.css'
+// import css from '../index.module.css'
 
 import {
     MenuUnfoldOutlined,
@@ -36,13 +36,14 @@ class HeaderComponent extends React.Component {
     render() {
         const { collapsed } = this.state;
         return (
-            <Header className={css.siteLayoutBackground} style={{ padding: 0 }}>
-            {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                    className: css.trigger,
-                    onClick: this.toggle,
-                })}
-                    </Header>
-
+            // <Header className={css.siteLayoutBackground} style={{ padding: 0 }}>
+            // {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+            //         className: css.trigger,
+            //         onClick: this.toggle,
+            //     })}
+            //         </Header>
+            <>
+            </>
         );
     }
 }
