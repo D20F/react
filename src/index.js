@@ -22,6 +22,8 @@ import './index.css';
 import Home from './view/home/Home';
 import friend from './view/friend/friend';
 
+import Layout from './layout/index'
+
 // thunk中间件使用
 const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') {
@@ -35,27 +37,26 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
-            <Route render={({ location }) => (
-                // <TransitionGroup >
-                //     <CSSTransition
-                //     key={location.pathname}
-                //     appear={true}
-                //     classNames="item"
-                //     timeout={1000}
-                //     unmountOnExit={true}
-                // >
-                <Switch location={location} >
-                    <Route path="/" exact component={Home} />
-                    <Route path="/about" component={friend} />
-                </Switch>
-                //     </CSSTransition>
-                // </TransitionGroup>
-            )} />
-        </BrowserRouter>
+        <Layout />
     </Provider>
     , document.getElementById('root'));
 
+// ReactDOM.render(
+//     <Provider store={store}>
+//         <BrowserRouter>
+//             <Route render={({ location }) => (
+//                 <Switch location={location} >
+//                     <Route path="/" exact component={Home} />
+//                     <Route path="/about" component={friend} />
+//                 </Switch>
+//             )} />
+//         </BrowserRouter>
+//     </Provider>
+//     , document.getElementById('root'));
 
 
+/* <TransitionGroup >
+    <CSSTransition key={location.pathname} classNames="item" timeout={1000} >
+    </CSSTransition>
+</TransitionGroup> */
 

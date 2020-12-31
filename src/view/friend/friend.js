@@ -23,13 +23,30 @@ import './friend.scss'
 //     );
 // }
 
+// 挂载时
+// constructor
+// getDerivedStateFromProps
+// render
+// componentDidMount
+
+// 更新时
+// getDerivedStateFromProps
+// shouldComponentUpdate
+// render
+// getSnapshotBeforeUpdate
+// componentDidUpdate
+
+// 卸载时
+// componentWillUnmount
+
+
 class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             count: 0,
         }
-        console.log(this.props.history.location)
+        // console.log(this.props.history.location)
         console.log('constructor')
     } 
     static getDerivedStateFromProps(props, state) {
