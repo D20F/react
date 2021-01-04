@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 
 
@@ -10,9 +10,9 @@ const { Footer } = Layout;
 
 
 class SiderDemo extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
 
     render() {

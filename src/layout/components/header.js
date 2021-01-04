@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 
 import css from '../index.module.scss'
@@ -17,9 +17,9 @@ const { Header } = Layout;
 
 
 class HeaderComponent extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
 
     render() {

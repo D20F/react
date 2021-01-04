@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 
 
@@ -9,9 +9,9 @@ import { Breadcrumb } from 'antd';
 
 
 class SiderDemo extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor() {
+    //     super()
+    // }
 
 
     render() {

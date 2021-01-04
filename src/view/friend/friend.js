@@ -1,5 +1,5 @@
 // import logo from '../../assets/img/logo.svg';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 // import ReactDOM from 'react-dom';
 import { connect } from 'react-redux'
 

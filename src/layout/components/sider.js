@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import css from '../index.module.scss'
+import { ALL } from '@/router/routerConfig'
+
 
 import { Menu, Layout } from 'antd';
 import {
@@ -11,22 +13,42 @@ import {
     UserOutlined,
 
 } from '@ant-design/icons';
-
 const { SubMenu } = Menu;
-
 const { Sider } = Layout;
 
-class SiderComponent extends React.Component {
-    constructor(props) {
-        super(props)
+function item(props) {
+    
+    console.log(props)
+
+    if(props.children){
+        let i = props.children[0].meta.icon
+        return (
+            <Menu.Item key="22" icon={i}>
+                {props.path}
+            </Menu.Item>
+
+        );
+    }else{
+        console.log(2)
+
     }
 
+}
 
 
+
+
+class SiderComponent extends React.Component {
+    // constructor(props) {
+    //     super(props)
+    // }
     render() {
         return (
             <Sider collapsed={this.props.collapsed} >
                 <div className={css.logo} />
+
+            
+
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                     <Menu.Item key="1" icon={<PieChartOutlined />}>
                         Option 1
@@ -46,6 +68,12 @@ class SiderComponent extends React.Component {
                     <Menu.Item key="9" icon={<FileOutlined />}>
                         Files
                 </Menu.Item>
+                    {
+
+                        ALL.root.map((i) =>
+                            item(i)
+                        )
+                    }
                 </Menu>
             </Sider>
         );

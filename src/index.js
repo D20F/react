@@ -35,7 +35,10 @@ const store = createStore(
     applyMiddleware(...middleware)
 )
 
-
+window.onpopstate = function (event) {
+    console.log('location: ' + document.location);
+    console.log('state: ' + JSON.stringify(event.state));
+  };
 
 ReactDOM.render(
     <Provider store={store}>
@@ -44,7 +47,7 @@ ReactDOM.render(
             <BrowserRouter>
                 <Route render={({ location }) => (
                     <Switch location={location} >
-                        <Route path="/" exact component={Home} />
+                        {/* <Route path="/" exact component={Home} /> */}
                         <Route path="/about" component={friend} />
                     </Switch>
                 )} />
