@@ -1,11 +1,11 @@
 # 目录结构
 
-
+react-spring  动画库
 路由守卫
 请求路由
 动态路由未实现
 动态路由未存储 redux
-
+使用 recoil.js库实现状态管理
 
 ├─  public                  静态资源
 └─  src
