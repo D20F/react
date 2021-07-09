@@ -7,6 +7,8 @@ react-spring  动画库
 动态路由未存储 redux
 使用 recoil.js库实现状态管理
 
+
+```
 ├─  public                  静态资源
 └─  src
     ├─ assets               项目公共资源
@@ -17,7 +19,7 @@ react-spring  动画库
     ├─ views                vue页面文件夹
     ├─ app                  vue app主页面
     └─ main                 vue入口JS文件
-
+```
 ## 废弃
 
 
