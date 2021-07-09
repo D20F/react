@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux'
 import css from './index.module.scss'
 
 
@@ -49,10 +48,7 @@ class LayoutComponent extends React.Component {
 
 
 
-const mapStateToProps = (state) => {
-    return state
-}
-export default connect(mapStateToProps)(LayoutComponent)
+export default LayoutComponent
 
 
 

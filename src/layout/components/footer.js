@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux'
-
 
 
 import { Layout } from 'antd';
@@ -9,7 +7,7 @@ const { Footer } = Layout;
 
 
 
-class SiderDemo extends React.Component {
+class FooterComponent extends React.Component {
     // constructor(props) {
     //     super(props)
     // }
@@ -28,11 +26,7 @@ class SiderDemo extends React.Component {
 }
 
 
-
-const mapStateToProps = (state) => {
-    return state
-}
-export default connect(mapStateToProps)(SiderDemo)
+export default FooterComponent
 
 
 

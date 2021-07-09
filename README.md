@@ -18,10 +18,37 @@ react-spring  动画库
     ├─ app                  vue app主页面
     └─ main                 vue入口JS文件
 
+## 废弃
 
-    filter: brightness(.7);
-    background: RGB(199,237,204);
 
-    document.querySelector('.css-10335ra').style = '    background: RGB(199,237,204);transition: opacity 0.5s ease 0s;'
-    document.querySelector('.css-3ao3zf').style = '    background: RGB(199,237,204);transition: opacity 0.5s ease 0s;'
-    document.querySelector('.css-12vsfho').style = '    background: RGB(199,237,204);transition: opacity 0.5s ease 0s;'
+使用基础jsx 
+创建页面 
+使用生命周期函数 
+定义数据 
+双向绑定 
+书写css
+
+高阶函数写法
+
+使用子组件 
+封装全局组件 
+组件传参 
+组件调用函数
+
+使用路由
+跳转路由
+路由参数
+嵌套路由 
+路由过渡
+
+
+路由表
+动态添加
+高阶函数完成路由守卫
+
+redux 
+mobx 
+数据流控制
+
+ant组件的控制
+

@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux'
 
 import css from '../index.module.scss'
 
@@ -36,11 +35,7 @@ class HeaderComponent extends React.Component {
 }
 
 
-
-const mapStateToProps = (state) => {
-    return state
-}
-export default connect(mapStateToProps)(HeaderComponent)
+export default HeaderComponent
 
 
 

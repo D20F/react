@@ -1,22 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux'
-
-
-
 import { Breadcrumb } from 'antd';
 
 
 
 
-class SiderDemo extends React.Component {
-    // constructor() {
-    //     super()
-    // }
-
+class breadcrumbComponent extends React.Component {
+    constructor() {
+        super()
+    }
 
     render() {
         return (
-
             <Breadcrumb style={{ margin: '16px 0' }}>
                 <Breadcrumb.Item>User</Breadcrumb.Item>
                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
@@ -28,10 +22,7 @@ class SiderDemo extends React.Component {
 
 
 
-const mapStateToProps = (state) => {
-    return state
-}
-export default connect(mapStateToProps)(SiderDemo)
+export default breadcrumbComponent
 
 
 

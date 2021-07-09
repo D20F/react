@@ -1,11 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux'
 
 
-import './index.scss'
+// import './index.scss'
 
 
-class App extends React.Component {
+class Dashboard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -18,15 +17,13 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                table
+                Dashboard
             </div>
         )
     }
 }
-const mapStateToProps = (state) => {
-    return state
-}
-export default connect(mapStateToProps)(App)
+
+export default Dashboard
 
 
 
