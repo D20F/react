@@ -5,8 +5,8 @@ import 'antd/dist/antd.css';
 import './index.css';
 
 
-import Layout from './layout/index'
-import Router from './router/index'
+import Layout from '@/layout/index'
+import Router from '@/router/index'
 
 
 
