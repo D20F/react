@@ -7,6 +7,10 @@ import {
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import routerConfig from './config'
 
+
+
+
+
 class RouterComponent extends Component {
     render() {
         return (
@@ -20,13 +24,23 @@ class RouterComponent extends Component {
                                 classNames="fade"
                             >
                                 <Switch location={location} >
-
                                     {
-                                        routerConfig.map((item) => {
-                                            return <Route path={item.path} component={item.component} key={item.path} />
+                                        routerConfig.map(({ children, path, component, title }) => {
+                                            if (children) {
+                                                return (
+                                                    <Switch key={title}>
+                                                        {
+                                                            children.map(({ path, component, title }) => {
+                                                                return <Route path={path} component={component} key={title} />
+                                                            })
+                                                        }
+                                                    </Switch>
+                                                );
+                                            } else {
+                                                return <Route path={path} component={component} key={title} />
+                                            }
                                         })
                                     }
-
                                 </Switch>
                             </CSSTransition>
                         </TransitionGroup>

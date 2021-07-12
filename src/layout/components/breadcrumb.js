@@ -6,7 +6,8 @@ import { Breadcrumb } from 'antd';
 
 class breadcrumbComponent extends React.Component {
     constructor() {
-        super()
+        super();
+        this.state = {};
     }
 
     render() {

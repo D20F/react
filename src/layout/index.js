@@ -16,10 +16,13 @@ const { Content } = Layout;
 class LayoutComponent extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            collapsed: false,
+
+        };
     }
-    state = {
-        collapsed: false,
-    };
+
+
 
 
     onCollapse = () => {
@@ -28,7 +31,6 @@ class LayoutComponent extends React.Component {
         });
     };
     render() {
-        const { collapsed } = this.state;
         return (
             <Layout className={css.layout}>
                 <Sider collapsed={this.state.collapsed} />

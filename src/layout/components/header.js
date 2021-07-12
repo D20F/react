@@ -16,9 +16,10 @@ const { Header } = Layout;
 
 
 class HeaderComponent extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    // }
+    constructor() {
+        super();
+        this.state = {};
+    }
 
 
     render() {

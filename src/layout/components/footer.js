@@ -8,9 +8,10 @@ const { Footer } = Layout;
 
 
 class FooterComponent extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    // }
+    constructor() {
+        super();
+        this.state = {};
+    }
 
 
     render() {
