@@ -1,25 +1,31 @@
 import logo from '../../assets/logo.svg';
 import './index.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+import { useHistory, useLocation, useParams, useRouteMatch, } from "react-router-dom";
+
+
+function Login() {
+    // 获取 history 对象
+    const history = useHistory();
+    // 获得当前路径
+ 	const {pathname} = useLocation();
+	 // 获得当前参数
+ 	let { slug } = useParams();
+    console.log(history)
+    function Jump(params) {
+        console.log(params)
+        history.push("/home");
+    }
+    return (
+        <div className="App">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <a onClick={()=>{ Jump(78)} }>
+                    Edit
         </a>
-      </header>
-    </div>
-  );
+            </header>
+        </div>
+    );
 }
 
-export default App;
+export default Login;

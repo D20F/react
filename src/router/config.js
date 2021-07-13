@@ -13,6 +13,12 @@ import {
 } from '@ant-design/icons';
 let routerConfig = [
     {
+        path: '/login',
+        title: '登录',
+        component: Login,
+        hidden: false
+    },
+    {
         path: '/',
         title: '仪表盘',
         icon: <PieChartOutlined />,
@@ -40,14 +46,6 @@ let routerConfig = [
                 hidden: true
             },
         ]
-    },
-
-
-    {
-        path: '/login',
-        title: '登录',
-        component: Login,
-        hidden: false
     },
 ]
 

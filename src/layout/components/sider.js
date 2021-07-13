@@ -4,12 +4,8 @@ import { Menu, Layout } from 'antd';
 import css from '../index.module.scss'
 import routerConfig from '@/router/config'
 
-
 const { Sider } = Layout;
 const { SubMenu } = Menu;
-
-
-
 
 
 class SiderComponent extends React.Component {
@@ -21,7 +17,16 @@ class SiderComponent extends React.Component {
     jumpRoute = (data) => {
         // 跳转路由
         console.log(data)
+        console.log(this)
+        const state = { 'page_id': 1, 'user_id': 5 }
+        const title = 'sss'
+        const url = data.key
+        let history = window.history
+        history.pushState(state, title, url)
+        history.go(0);
+
     }
+
 
     render() {
         return (
