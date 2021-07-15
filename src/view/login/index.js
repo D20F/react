@@ -8,19 +8,26 @@ function Login() {
     // 获取 history 对象
     const history = useHistory();
     // 获得当前路径
- 	const {pathname} = useLocation();
-	 // 获得当前参数
- 	let { slug } = useParams();
+    const { pathname } = useLocation();
+    // 获得当前参数
+    let { slug } = useParams();
     console.log(history)
     function Jump(params) {
         console.log(params)
-        history.push("/home");
+        console.log(pathname)
+        console.log(slug)
+        history.push({
+            pathname: "/",
+            params: {
+                id: 'sad'
+            }
+        });
     }
     return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <a onClick={()=>{ Jump(78)} }>
+                <a onClick={() => { Jump(78) }}>
                     Edit
         </a>
             </header>

@@ -1,13 +1,15 @@
 import React from 'react';
 import { Menu, Layout } from 'antd';
-
 import css from '../index.module.scss'
 import routerConfig from '@/router/config'
-
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
 
+
+
+
+// 未修改fun ---未完成
 class SiderComponent extends React.Component {
     constructor() {
         super();
@@ -26,7 +28,6 @@ class SiderComponent extends React.Component {
         history.go(0);
 
     }
-
 
     render() {
         return (
@@ -60,8 +61,38 @@ class SiderComponent extends React.Component {
     }
 }
 
+// 未修改fun ---未完成
 
-
+function HeaderComponent(props) {
+    return (
+        <Sider collapsed={this.props.collapsed} >
+        <div className={css.logo} />
+        <Menu onClick={this.jumpRoute} theme="dark" mode="inline" defaultSelectedKeys={['仪表盘']}>
+            {
+                routerConfig.map(({ hidden, title, icon, children, path }) => {
+                    if (hidden) {
+                        if (children) {
+                            return <SubMenu key={title} icon={icon} title={title}>
+                                {
+                                    children.map(({ title, icon, path }) => {
+                                        return <Menu.Item key={path} icon={icon}>
+                                            {title}
+                                        </Menu.Item>
+                                    })
+                                }
+                            </SubMenu>
+                        } else {
+                            return <Menu.Item key={path} icon={icon}>
+                                {title}
+                            </Menu.Item>
+                        }
+                    }
+                })
+            }
+        </Menu>
+    </Sider>
+    );
+}
 
 export default SiderComponent
 

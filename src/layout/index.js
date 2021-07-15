@@ -12,7 +12,7 @@ import { Layout } from 'antd';
 
 
 const { Content } = Layout;
-
+// 未修改fun ---未完成
 class LayoutComponent extends React.Component {
     constructor(props) {
         super(props)
