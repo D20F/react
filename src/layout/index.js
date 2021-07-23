@@ -1,18 +1,14 @@
 import React from 'react';
 import css from './index.module.scss'
-
+import { Layout } from 'antd';
 
 import Sider from './components/sider'
 import Header from './components/header'
 import Breadcrumb from './components/breadcrumb'
 import Footer from './components/footer'
 
-
-import { Layout } from 'antd';
-
-
 const { Content } = Layout;
-// 未修改fun ---未完成
+
 class LayoutComponent extends React.Component {
     constructor(props) {
         super(props)
@@ -21,9 +17,6 @@ class LayoutComponent extends React.Component {
 
         };
     }
-
-
-
 
     onCollapse = () => {
         this.setState({
