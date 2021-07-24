@@ -3,28 +3,25 @@ import { Menu, Layout } from 'antd';
 import css from '../index.module.scss'
 import routerConfig from '@/router/config'
 
-// import { useHistory, useLocation, useParams, useRouteMatch, } from "react-router-dom";
+import getHistory from '@/router/history'
+
+
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
+const history = getHistory();
 
 
-
+// 要用一个大router包起来的
 
 function SiderComponent(props) {
-            
-        // var history = useHistory();
-        // console.log(history)
-
-
 
     // 跳转路由
     function jumpRoute({ key }) {
-        // console.log(history)
-        // history.push({
-        //     pathname: key,
-        //     params: {}
-        // });
+        history.push({
+            pathname: key,
+            params: { id: 1111 }
+        });
     }
 
     return (

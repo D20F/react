@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-    BrowserRouter as Router,
+    Router,
     Switch,
     Route,
 } from "react-router-dom";
@@ -9,47 +9,47 @@ import {
 
 
 import routerConfig from './config'
+import getHistory from './history'
+const history = getHistory();
 
-
-
-class RouterComponent extends Component {
-    render() {
-        return (
-            <Router>
-                <Route
-                    render={({ location }) =>
-                        // <TransitionGroup>
-                        //     <CSSTransition
-                        //         key={location.key}
-                        //         timeout={300}
-                        //         classNames="fade"
-                        //     >
-                                <Switch location={location} >
-                                    {
-                                        routerConfig.map(({ children, path, component, title }) => {
-                                            if (children) {
-                                                return (
-                                                    <Switch key={title}>
-                                                        {
-                                                            children.map(({ path, component, title }) => {
-                                                                return <Route exact={true} path={path} component={component} key={title} />
-                                                            })
-                                                        }
-                                                    </Switch>
-                                                );
-                                            } else {
-                                                return <Route exact={true} path={path} component={component} key={title} />
+function RouterComponent() {
+    return (
+        <Router history={history}>
+            <Route
+                render={({ location }) =>
+                    // <TransitionGroup>
+                    //     <CSSTransition
+                    //         key={location.key}
+                    //         timeout={300}
+                    //         classNames="fade"
+                    //     >
+                    <Switch location={location} >
+                        {
+                            routerConfig.map(({ children, path, component, title }) => {
+                                if (children) {
+                                    return (
+                                        <Switch key={title}>
+                                            {
+                                                children.map(({ path, component, title }) => {
+                                                    return <Route exact={true} path={path} component={component} key={title} />
+                                                })
                                             }
-                                        })
-                                    }
-                                </Switch>
-                        //    </CSSTransition>
-                        //</TransitionGroup>
-                    }
-                />
-            </Router>
-        );
-    }
+                                        </Switch>
+                                    );
+                                } else {
+                                    return <Route exact={true} path={path} component={component} key={title} />
+                                }
+                            })
+                        }
+                    </Switch>
+                    //    </CSSTransition>
+                    //</TransitionGroup>
+                }
+            />
+        </Router>
+
+    )
+
 }
 
 export default RouterComponent;

@@ -13,8 +13,6 @@ import Router from '@/router/index'
 ReactDOM.render(
     <Layout>
         <Router />
-    </Layout>,
+     </Layout>,
     document.getElementById('root')
 );
-
-
